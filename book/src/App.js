@@ -1,6 +1,7 @@
 // App.js
 import BookList from './components/booklist';
 import React, { useState } from 'react';
+import Bookform from './components/bookform'
   function App() {
     const [books, setBooks] = useState([
       'The Chronicles of Narnia',
@@ -8,12 +9,16 @@ import React, { useState } from 'react';
       'The Hobbit',
       'Harry Potter and the Sorcerers Stone',
     ]);
-  
+  //
+  const handleClick = (newBook) => {
+    setBooks([...books, newBook]);
+  };
 return (
     <>  
       <h1>Bookish</h1>
       <p>A book without philosophy, without a sense of mission or wider dream, is just words on a page, let's not call them books.</p>
      <BookList book={books} />
+    <Bookform form={handleClick} /> 
     
     </> 
   );
