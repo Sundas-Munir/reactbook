@@ -15,16 +15,19 @@ import Bookform from './components/bookform'
   const handleClick = (newBook) => {
     setBooks([...books, newBook]);
   };
+
+  const handleRemove = (updateBooks) => {
+    setBooks(updateBooks);
+  };
+  
 return (
     <>  
       <h1>Bookish</h1>
       <p>A book without philosophy, without a sense of mission or wider dream, is just words on a page, let's not call them books.</p>
-     <BookList book={books} />
+     <BookList book={books} onRemove={handleRemove}/>
     <Bookform form={handleClick} /> 
     
     </> 
   );
 };
-
-
 export default App;
